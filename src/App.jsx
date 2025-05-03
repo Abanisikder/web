@@ -1,8 +1,9 @@
 import { useState } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import HomePage from './pages/homePage';
 import BusinessPage from './pages/businessPage';
 import TechPage from './pages/tech';
+import Admin from './pages/admin'; // ✅ Corrected capitalization
 
 import './App.css';
 
@@ -15,9 +16,10 @@ function App() {
         {/* Navigation */}
         <nav>
           <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/business">Business</a></li>
-            <li><a href="/tech">Tech</a></li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/business">Business</Link></li>
+            <li><Link to="/tech">Tech</Link></li>
+            <li><Link to="/admin">Admin</Link></li>
           </ul>
         </nav>
 
@@ -26,6 +28,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/business" element={<BusinessPage />} />
           <Route path="/tech" element={<TechPage />} />
+          <Route path="/admin" element={<Admin />} />
         </Routes>
       </div>
     </Router>
